@@ -3,7 +3,7 @@ from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk, Image
 
-# Create object 
+# Create object
 root = Tk()
 
 #Variables
@@ -18,7 +18,8 @@ yplayer = yWmax/2 - carW
 #Imports
 bg = PhotoImage(file = "pixel-street.png")
 player = PhotoImage(file = "main-car.png")
-
+width, height = main-car.size
+print(width, height)
 #----------Code----------#
 root.geometry("870x570")
 
