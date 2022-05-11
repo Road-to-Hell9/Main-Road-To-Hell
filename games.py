@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import ttk
-from tkvideo import tkvideo
+#from tkvideo import tkvideo
 from PIL import ImageTk, Image
 ##sprites
 
@@ -52,7 +52,7 @@ class GFG:
 
 root = Tk()
 
-sprite1 = PhotoImage(file = r'C:\Users\admin\Desktop\project\guideo\carsprite.png')
+sprite1 = PhotoImage(file = r'C:\Users\chris\Documents\GitHub\Main-Road-To-Hell\carsprite.png')
 sprite1 = sprite1.subsample(3,3)
 ##window parameters
 root.geometry("1280x720")
@@ -64,8 +64,8 @@ my_label.pack()
 my_label1 = Label(root)
 my_label1.pack()
 
-player = tkvideo(r"C:\Users\admin\Desktop\project\guideo\video.mp4", my_label1, loop = 1, size = (1280,720))
-player.play()
+#player = tkvideo(r"C:\Users\admin\Desktop\project\guideo\video.mp4", my_label1, loop = 1, size = (1280,720))
+#player.play()
 
 
 ##interractable
