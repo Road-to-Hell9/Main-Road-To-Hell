@@ -3,17 +3,20 @@ from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk, Image
 
-#Variables
-
-#Imports
-
 # Create object 
 root = Tk()
-  
-# Adjust size 
-root.geometry("400x400")
+
+#Variables
+
+
+#Imports
+bg = PhotoImage(file = "pixel-street.png")
 
 #----------Code----------#
+root.geometry("870x570")
+# Show image using label
+label1 = Label( root, image = bg)
+label1.place(x = 0, y = 0)
 
 # Execute tkinter
 root.mainloop()
