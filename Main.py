@@ -16,7 +16,7 @@ bg = PhotoImage(file = "pixel-street.png")
 root.geometry("870x570")
 # Show image using label
 label1 = Label( root, image = bg)
-label1.place(x = 0, y = 0)
+label1.place(x = -2, y = -1)
 
 # Execute tkinter
 root.mainloop()
