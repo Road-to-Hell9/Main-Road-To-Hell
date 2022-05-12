@@ -10,14 +10,12 @@ root = Tk()
 xWmax = 870
 yWmax = 570
 
-carW = 75
-
 xplayer = 2
-yplayer = yWmax/2 - carW
+yplayer = yWmax/2 - 117/2
 
 #Imports
 bg = PhotoImage(file = "pixel-street.png") 
-player = ImageTk.PhotoImage(file = "main-car.png")
+player_img = ImageTk.PhotoImage(file = "main-car.png")
 
 #----------Code----------#
 root.geometry("870x570")
@@ -25,8 +23,11 @@ root.geometry("870x570")
 label1 = Label(root, image = bg)
 label1.place(x = -2, y = -1)
 
-lable2 = Label(root, image = player, borderwidth=0)
-lable2.place(x = xplayer, y = yplayer)
+player = Label(root, image = player_img, borderwidth=0)
+player.place(x = xplayer, y = yplayer)
+
+carW = player.winfo_width()/2
+carH = player.winfo_height()/2
 
 # Execute tkinter
 root.mainloop()
