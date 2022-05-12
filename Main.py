@@ -1,8 +1,13 @@
 #Imports
 from tkinter import *
 from tkinter import ttk
-from PIL import ImageTk, Image
 from start import *
+from PIL import ImageTk, Image
+<<<<<<< Updated upstream
+from start import *
+=======
+
+>>>>>>> Stashed changes
 
 # Create object
 root = Tk()
