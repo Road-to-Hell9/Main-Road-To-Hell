@@ -13,8 +13,8 @@ Game = True
 time_1 = 0
 score = 0
 
-xplayer = 2
-yplayer = yWmax/2 - 117/2
+xCsize = 2
+yCsize = yWmax/2 - 117/2
 
 #Imports
 bg = PhotoImage(file = "pixel-street.png")
@@ -33,10 +33,19 @@ label1 = Label(root, image = bg)
 label1.place(x = -2, y = -1)
 
 player = Label(root, image = player_img, borderwidth=0)
-player.place(x = xplayer, y = yplayer)
+player.place(x = xCsize, y = yCsize)
 
-carW = player.winfo_width()/2
-carH = player.winfo_height()
+#Game start
+while Game == True:
+    
+    
+    #Hitboxes
+        #Check player x and y
+    carXmin = player.winfo_rootx()
+    carYmin = player.winfo_rooty()
+    carXmax = player.winfo_rootx() + xCsize
+    carYmax = player.winfo_rooty() + yCsize
+        #Check Red Car x and y
 
 # Execute tkinter
 root.mainloop()
