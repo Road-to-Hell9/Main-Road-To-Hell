@@ -1,0 +1,4 @@
+def Time():
+    if Game == True:
+        time_1 = n + 1
+        root.after(1000, Time)
