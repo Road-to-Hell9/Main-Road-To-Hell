@@ -4,7 +4,11 @@ from tkinter import ttk
 from start import *
 from PIL import ImageTk, Image
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 from start import *
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes

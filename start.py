@@ -1,9 +1,13 @@
 from tkinter import *
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 def open_main():
     start.destroy()
     import Main
 
+=======
+from Main import*
+>>>>>>> Stashed changes
 =======
 from Main import*
 >>>>>>> Stashed changes
