@@ -32,7 +32,7 @@ root.geometry("870x570")
 label1 = Label(root, image = bg)
 label1.place(x = -2, y = -1)
 
-lable2 = Label(root, image = player)
+lable2 = Label(root, image = player, borderwidth=0)
 lable2.place(x = xplayer, y = yplayer)
 
 # Execute tkinter
