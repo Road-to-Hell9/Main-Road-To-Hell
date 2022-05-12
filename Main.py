@@ -1,6 +1,7 @@
 #Imports
 from tkinter import *
 from tkinter import ttk
+from tkinter.constants import *
 from PIL import ImageTk, Image
 
 # Create object 
@@ -17,7 +18,7 @@ yplayer = yWmax/2 - carW
 
 #Imports
 bg = PhotoImage(file = "pixel-street.png") 
-player = ImageTk.PhotoImage(file = "main-car.png")
+player_img = ImageTk.PhotoImage(file = "main-car.png")
 
 #----------Code----------#
 root.geometry("870x570")
@@ -25,8 +26,9 @@ root.geometry("870x570")
 label1 = Label(root, image = bg)
 label1.place(x = -2, y = -1)
 
-lable2 = Label(root, image = player)
-lable2.place(x = xplayer, y = yplayer)
+player = Canvas(root, width=10, height=10)
+player.pack
+player.create_image(xplayer, yplayer, anchor=NW, image = player_img)
 
 # Execute tkinter
 root.mainloop()
