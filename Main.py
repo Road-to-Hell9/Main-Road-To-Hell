@@ -11,6 +11,7 @@ xWmax = 870
 yWmax = 570
 Game = True
 time_1 = 0
+score = 0
 
 xplayer = 2
 yplayer = yWmax/2 - 117/2
@@ -36,7 +37,6 @@ player.place(x = xplayer, y = yplayer)
 
 carW = player.winfo_width()/2
 carH = player.winfo_height()
-
 
 # Execute tkinter
 root.mainloop()
