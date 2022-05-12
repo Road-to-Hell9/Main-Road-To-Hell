@@ -2,7 +2,7 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk, Image
-from start.py import *
+from start import *
 
 # Create object
 root = Tk()

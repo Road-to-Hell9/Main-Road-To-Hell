@@ -1,4 +1,7 @@
 from tkinter import *
+def open_main():
+    start.destroy()
+    import Main
 
 start = Tk()
 start.title("Main road to hell")
@@ -7,7 +10,7 @@ start['bg']='grey'
 label_fenetre = Label(start,text="Menu",fg='white', bg="black",font="Arial 15 italic")
 label_fenetre.pack()
 
-bouton_jouer = Button(start,text = " Play ",bg='orange' )
+bouton_jouer = Button(start,text = " Play ",bg='orange', command = open_main )
 bouton_jouer.pack(padx=5,pady=10)
 
 player = IntVar()
