@@ -16,8 +16,8 @@ xplayer = 2
 yplayer = yWmax/2 - carW
 
 #Imports
-bg = PhotoImage(file = "pixel-street.png")
-player = PhotoImage(file = "main-car.png")
+bg = PhotoImage(file = "pixel-street.png") 
+player = ImageTk.PhotoImage(file = "main-car.png")
 
 #----------Code----------#
 root.geometry("870x570")
