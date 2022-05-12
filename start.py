@@ -1,12 +1,5 @@
 from tkinter import *
-<<<<<<< Updated upstream
-def open_main():
-    start.destroy()
-    import Main
-
-=======
 from Main import*
->>>>>>> Stashed changes
 start = Tk()
 start.title("Main road to hell")
 start['bg']='grey'

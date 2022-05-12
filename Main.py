@@ -3,11 +3,6 @@ from tkinter import *
 from tkinter import ttk
 from start import *
 from PIL import ImageTk, Image
-<<<<<<< Updated upstream
-from start import *
-=======
-
->>>>>>> Stashed changes
 
 # Create object
 root = Tk()
