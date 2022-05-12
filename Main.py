@@ -2,6 +2,11 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk, Image
+def movement():
+    if keyboard.read_key()=="z":
+        player.place(x = xCsize, y = yCsize*2)
+    if keyboard.read_key()=="s":
+        player.place(x = xCsize, y = yCsize/2)
 
 # Create object
 root = Tk()
@@ -37,8 +42,8 @@ player.place(x = xCsize, y = yCsize)
 
 #Game start
 while Game == True:
-    
-    
+
+
     #Hitboxes
         #Check player x and y
     carXmin = player.winfo_rootx()
