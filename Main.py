@@ -3,7 +3,7 @@ from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk, Image
 
-# Create object 
+# Create object
 root = Tk()
 
 #Variables
@@ -14,7 +14,7 @@ xplayer = 2
 yplayer = yWmax/2 - 117/2
 
 #Imports
-bg = PhotoImage(file = "pixel-street.png") 
+bg = PhotoImage(file = "pixel-street.png")
 player_img = ImageTk.PhotoImage(file = "main-car.png")
 
 #----------Code----------#
@@ -28,6 +28,7 @@ player.place(x = xplayer, y = yplayer)
 
 carW = player.winfo_width()/2
 carH = player.winfo_height()
+
 
 # Execute tkinter
 root.mainloop()
