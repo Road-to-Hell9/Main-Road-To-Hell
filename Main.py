@@ -20,6 +20,7 @@ yCsize = yWmax/2 - 117/2
 #Imports
 bg = PhotoImage(file = "pixel-street.png")
 player_img = ImageTk.PhotoImage(file = "main-car.png")
+npc_img = ImageTk.PhotoImage(file = "red-car.png")
 
 #----------Code----------#
 #timer
@@ -36,6 +37,9 @@ label1.place(x = -2, y = -1)
 player = Label(root, image = player_img, borderwidth=0)
 player.place(x = xCsize, y = yCsize)
 
+npc_1 = Label(root, image = npc_img, borderwidth=0)
+npc_1.place(x = 500, y = yCsize)
+
 #Functions
 def movement_down(event):
     player.place(x = xCsize, y = yCsize*2)
@@ -50,15 +54,25 @@ root.bind("<s>",movement_down)
 #Game start
 ##while Game == True:
     #Keys
-
+    #if keyboard.read_key()=="z":
+    #    player.place(x = xCsize, y = yCsize*2)
+    #if keyboard.read_key()=="s":
+    #    player.place(x = 40, y = yCsize/2)
+        
     #Hitboxes
         #Check player x and y
-carXmin = player.winfo_rootx()
-carYmin = player.winfo_rooty()
-carXmax = player.winfo_rootx() + xCsize
-carYmax = player.winfo_rooty() + yCsize
+    carXmin = player.winfo_rootx()
+    carYmin = player.winfo_rooty()
+    carXmax = player.winfo_rootx() + xCsize
+    carYmax = player.winfo_rooty() + yCsize
         #Check Red Car x and y
-##movement und shit
+    npcXmin = npc_1.winfo_rootx()
+    npcYmin = npc_1.winfo_rooty()
+    npcXmax = npc_1.winfo_rootx() + xCsize
+    npcYmax = npc_1.winfo_rooty() + yCsize
+        #Check colision
+    if carXmax >= npcXmin and carXmin <= npcXmax and carYmax >= npcYmin and carYmin <= npcYmax:
+        Game = False
 
-# Execute tkinter
-root.mainloop()
+    # Execute tkinter
+    root.mainloop()
