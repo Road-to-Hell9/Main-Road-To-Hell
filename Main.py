@@ -2,11 +2,6 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk, Image
-def movement():
-    if keyboard.read_key()=="z":
-        player.place(x = xCsize, y = yCsize*2)
-    if keyboard.read_key()=="s":
-        player.place(x = xCsize, y = yCsize/2)
 
 # Create object
 root = Tk()
@@ -40,9 +35,16 @@ label1.place(x = -2, y = -1)
 player = Label(root, image = player_img, borderwidth=0)
 player.place(x = xCsize, y = yCsize)
 
+#Functions
+def movement():
+    if keyboard.read_key()=="z":
+        player.place(x = xCsize, y = yCsize*2)
+    if keyboard.read_key()=="s":
+        player.place(x = xCsize, y = yCsize/2)
+        
 #Game start
 while Game == True:
-
+    #Keys
 
     #Hitboxes
         #Check player x and y
