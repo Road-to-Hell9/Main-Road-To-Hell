@@ -42,13 +42,17 @@ npc_1.place(x = 500, y = yCsize)
 #Functions
 def movement_down(event):
     player.place(x = xCsize, y = yCsize*2)
-    print("s")
+    print("d")
 def movement_up(event):
     player.place(x = xCsize, y = yCsize/2)
-    print("z")
+    print("q")
+def movement_mid(event):
+    player.place(x = xCsize, y = yCsize)
+    print("s")
 
-root.bind("<z>",movement_up)
-root.bind("<s>",movement_down)
+root.bind("<q>",movement_up)
+root.bind("<d>",movement_down)
+root.bind("<s>",movement_mid)
 
 #Game start
 while Game == True:
