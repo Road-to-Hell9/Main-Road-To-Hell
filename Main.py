@@ -43,13 +43,17 @@ npc_1.place(x = 500, y = yCsize)
 #Functions
 def movement_down(event):
     player.place(x = xCsize, y = yCsize*2)
-    print("s")
+    print("d")
 def movement_up(event):
     player.place(x = xCsize, y = yCsize/2)
-    print("z")
+    print("q")
+def movement_mid(event):
+    player.place(x = xCsize, y = yCsize)
+    print("s")
 
-root.bind("<z>",movement_up)
-root.bind("<s>",movement_down)
+root.bind("<q>",movement_up)
+root.bind("<d>",movement_down)
+root.bind("<s>",movement_mid)
 
 #Game start
 ##while Game == True:
@@ -58,21 +62,21 @@ root.bind("<s>",movement_down)
     #    player.place(x = xCsize, y = yCsize*2)
     #if keyboard.read_key()=="s":
     #    player.place(x = 40, y = yCsize/2)
-        
+
     #Hitboxes
-        #Check player x and y
-    carXmin = player.winfo_rootx()
-    carYmin = player.winfo_rooty()
-    carXmax = player.winfo_rootx() + xCsize
-    carYmax = player.winfo_rooty() + yCsize
-        #Check Red Car x and y
-    npcXmin = npc_1.winfo_rootx()
-    npcYmin = npc_1.winfo_rooty()
-    npcXmax = npc_1.winfo_rootx() + xCsize
-    npcYmax = npc_1.winfo_rooty() + yCsize
-        #Check colision
-    if carXmax >= npcXmin and carXmin <= npcXmax and carYmax >= npcYmin and carYmin <= npcYmax:
-        Game = False
+    #Check player x and y
+carXmin = player.winfo_rootx()
+carYmin = player.winfo_rooty()
+carXmax = player.winfo_rootx() + xCsize
+carYmax = player.winfo_rooty() + yCsize
+    #Check Red Car x and y
+npcXmin = npc_1.winfo_rootx()
+npcYmin = npc_1.winfo_rooty()
+npcXmax = npc_1.winfo_rootx() + xCsize
+npcYmax = npc_1.winfo_rooty() + yCsize
+    #Check colision
+if carXmax >= npcXmin and carXmin <= npcXmax and carYmax >= npcYmin and carYmin <= npcYmax:
+    Game = False
 
     # Execute tkinter
     root.mainloop()
