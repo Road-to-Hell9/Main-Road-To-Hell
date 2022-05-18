@@ -52,13 +52,7 @@ root.bind("<s>",movement_down)
 
 #Game start
 while Game == True:
-    #Keys
-    #if keyboard.read_key()=="z":
-    #    player.place(x = xCsize, y = yCsize*2)
-    #if keyboard.read_key()=="s":
-    #    player.place(x = 40, y = yCsize/2)
-        
-    #Hitboxes
+#Hitboxes
         #Check player x and y
     carXmin = player.winfo_rootx()
     carYmin = player.winfo_rooty()
