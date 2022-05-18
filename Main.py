@@ -2,7 +2,7 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk, Image
-from keyboard import *
+##from keyboard import *
 
 # Create object
 root = Tk()
@@ -37,23 +37,28 @@ player = Label(root, image = player_img, borderwidth=0)
 player.place(x = xCsize, y = yCsize)
 
 #Functions
-def movement():
-    if keyboard.read_key()=="z":
-        player.place(x = xCsize, y = yCsize*2)
-    if keyboard.read_key()=="s":
-        player.place(x = xCsize, y = yCsize/2)
-        
+def movement_down(event):
+    player.place(x = xCsize, y = yCsize*2)
+    print("s")
+def movement_up(event):
+    player.place(x = xCsize, y = yCsize/2)
+    print("z")
+
+root.bind("<z>",movement_up)
+root.bind("<s>",movement_down)
+
 #Game start
-while Game == True:
+##while Game == True:
     #Keys
 
     #Hitboxes
         #Check player x and y
-    carXmin = player.winfo_rootx()
-    carYmin = player.winfo_rooty()
-    carXmax = player.winfo_rootx() + xCsize
-    carYmax = player.winfo_rooty() + yCsize
+carXmin = player.winfo_rootx()
+carYmin = player.winfo_rooty()
+carXmax = player.winfo_rootx() + xCsize
+carYmax = player.winfo_rooty() + yCsize
         #Check Red Car x and y
+##movement und shit
 
 # Execute tkinter
 root.mainloop()
