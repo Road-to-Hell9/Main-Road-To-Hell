@@ -2,7 +2,7 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk, Image
-import keyboard
+#import keyboard
 
 # Create object
 root = Tk()
@@ -45,22 +45,25 @@ npc_1.place(x = 500, y = yCsize)
 #Game start
 while Game == True:
     #Keys
-    if keyboard.read_key()=="z":
-        player.place(x = xCsize, y = yCsize*2)
-    if keyboard.read_key()=="s":
-        player.place(x = 40, y = yCsize/2)
+    #if keyboard.read_key()=="z":
+    #    player.place(x = xCsize, y = yCsize*2)
+    #if keyboard.read_key()=="s":
+    #    player.place(x = 40, y = yCsize/2)
         
     #Hitboxes
         #Check player x and y
-#    carXmin = player.winfo_rootx()
-#    carYmin = player.winfo_rooty()
-#    carXmax = player.winfo_rootx() + xCsize
-#    carYmax = player.winfo_rooty() + yCsize
+    carXmin = player.winfo_rootx()
+    carYmin = player.winfo_rooty()
+    carXmax = player.winfo_rootx() + xCsize
+    carYmax = player.winfo_rooty() + yCsize
         #Check Red Car x and y
-#    eneXmin = npc_1.winfo_rootx()
-#    eneYmin = npc_1.winfo_rooty()
-#    eneXmax = npc_1.winfo_rootx() + xCsize
-#    eneYmax = npc_1.winfo_rooty() + yCsize
+    npcXmin = npc_1.winfo_rootx()
+    npcYmin = npc_1.winfo_rooty()
+    npcXmax = npc_1.winfo_rootx() + xCsize
+    npcYmax = npc_1.winfo_rooty() + yCsize
+        #Check colision
+    if carXmax >= npcXmin and carXmin <= npcXmax and carYmax >= npcYmin and carYmin <= npcYmax:
+        Game = False
 
     # Execute tkinter
     root.mainloop()
