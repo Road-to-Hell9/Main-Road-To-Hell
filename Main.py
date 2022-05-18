@@ -2,7 +2,6 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk, Image
-##from keyboard import *
 
 # Create object
 root = Tk()
@@ -52,7 +51,7 @@ root.bind("<z>",movement_up)
 root.bind("<s>",movement_down)
 
 #Game start
-##while Game == True:
+while Game == True:
     #Keys
     #if keyboard.read_key()=="z":
     #    player.place(x = xCsize, y = yCsize*2)
