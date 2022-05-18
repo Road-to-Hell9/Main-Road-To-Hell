@@ -2,7 +2,7 @@
 from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk, Image
-from keyboard import *
+#from keyboard import *
 
 # Create object
 root = Tk()
@@ -20,6 +20,7 @@ yCsize = yWmax/2 - 117/2
 #Imports
 bg = PhotoImage(file = "pixel-street.png")
 player_img = ImageTk.PhotoImage(file = "main-car.png")
+npc_img = ImageTk.PhotoImage(file = "red-car.png")
 
 #----------Code----------#
 #timer
@@ -36,13 +37,17 @@ label1.place(x = -2, y = -1)
 player = Label(root, image = player_img, borderwidth=0)
 player.place(x = xCsize, y = yCsize)
 
+npc_1 = Label(root, image = npc_img, borderwidth=0)
+npc_1.place(x = 500, y = yCsize)
+
 #Functions
-def movement():
-    if keyboard.read_key()=="z":
-        player.place(x = xCsize, y = yCsize*2)
-    if keyboard.read_key()=="s":
-        player.place(x = xCsize, y = yCsize/2)
-        
+#def movement():
+#    if keyboard.read_key()=="z":
+#        player.place(x = xCsize, y = yCsize*2)
+#    if keyboard.read_key()=="s":
+#        player.place(x = 40, y = yCsize/2)
+# Execute tkinter
+root.mainloop()
 #Game start
 while Game == True:
     #Keys
@@ -54,6 +59,7 @@ while Game == True:
     carXmax = player.winfo_rootx() + xCsize
     carYmax = player.winfo_rooty() + yCsize
         #Check Red Car x and y
-
-# Execute tkinter
-root.mainloop()
+    eneXmin = npc_1.winfo_rootx()
+    eneYmin = npc_1.winfo_rooty()
+    eneXmax = npc_1.winfo_rootx() + xCsize
+    eneYmax = npc_1.winfo_rooty() + yCsize
