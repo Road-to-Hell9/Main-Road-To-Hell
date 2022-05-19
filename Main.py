@@ -14,7 +14,7 @@ Game = True
 time_1 = 0
 score = 0
 
-xCsize = 2
+xCsize = 200
 yCsize = yWmax/2 - 117/2
 xNPC_1 = 800
 
@@ -36,20 +36,20 @@ label1 = Label(root, image = bg)
 label1.place(x = -2, y = -1)
 
 player = Label(root, image = player_img, borderwidth=0)
-player.place(x = xCsize, y = yCsize)
+player.place(x = 2, y = yCsize)
 
 npc_1 = Label(root, image = npc_img, borderwidth=0)
 npc_1.place(x = xNPC_1, y = yCsize)
 
 #Keys
 def movement_down(event):
-    player.place(x = xCsize, y = yWmax - 160)
+    player.place(x = 2, y = yWmax - 160)
     print("d")
 def movement_up(event):
-    player.place(x = xCsize, y = 45)
+    player.place(x = 2, y = 45)
     print("q")
 def movement_mid(event):
-    player.place(x = xCsize, y = yCsize)
+    player.place(x = 2, y = yCsize)
     print("s")
 
 root.bind("<q>",movement_up)
@@ -65,17 +65,18 @@ def main_game():
         carXmin = player.winfo_rootx()
         carYmin = player.winfo_rooty()
         carXmax = player.winfo_rootx() + xCsize
-        carYmax = player.winfo_rooty() + yCsize
+        carYmax = player.winfo_rooty() + 117
         #Check Red Car x and y
         npcXmin = npc_1.winfo_rootx()
         npcYmin = npc_1.winfo_rooty()
         npcXmax = npc_1.winfo_rootx() + xCsize
-        npcYmax = npc_1.winfo_rooty() + yCsize
+        npcYmax = npc_1.winfo_rooty() + 117
         #Pos
         xNPC_1 = xNPC_1 - 3
-        print(xNPC_1)
         npc_1.place(x = xNPC_1, y = yCsize)
-        
+    
+    print(carXmax)
+    print(npcXmin)
         #Check colision
     if carXmax >= npcXmin and carXmin <= npcXmax and carYmax >= npcYmin and carYmin <= npcYmax:
         Game = False
