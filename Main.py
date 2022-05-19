@@ -74,9 +74,7 @@ def main_game():
         #Pos
         xNPC_1 = xNPC_1 - 3
         npc_1.place(x = xNPC_1, y = yCsize)
-    
-    print(carXmax)
-    print(npcXmin)
+
         #Check colision
     if carXmax >= npcXmin and carXmin <= npcXmax and carYmax >= npcYmin and carYmin <= npcYmax:
         Game = False
