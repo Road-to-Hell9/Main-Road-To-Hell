@@ -57,7 +57,7 @@ root.bind("<d>",movement_down)
 root.bind("<s>",movement_mid)
 
 def main_game():
-    global xNPC_1, yCsize, root
+    global xNPC_1, yCsize, root, Game, carXmax, carXmin, carYmax, carYmin, npcXmax, npcXmin, npcYmax, npcYmin
 #Game start
     if Game == True:
 #Hitboxes
@@ -71,17 +71,20 @@ def main_game():
         npcYmin = npc_1.winfo_rooty()
         npcXmax = npc_1.winfo_rootx() + xCsize
         npcYmax = npc_1.winfo_rooty() + yCsize
-        #Check colision
-        if carXmax >= npcXmin and carXmin <= npcXmax and carYmax >= npcYmin and carYmin <= npcYmax:
-             Game = False
-             print("Game Over")
-        
         #Pos
-        xNPC_1 = xNPC_1 - 1
+        xNPC_1 = xNPC_1 - 3
         print(xNPC_1)
         npc_1.place(x = xNPC_1, y = yCsize)
         
+        #Check colision
+    if carXmax >= npcXmin and carXmin <= npcXmax and carYmax >= npcYmin and carYmin <= npcYmax:
+        Game = False
+        print("Game Over")
+        
+    if Game == True:
         root.after(50, main_game)
+    elif Game == False:
+        print("")
     
     # Execute tkinter
 bouton_animer = Button(root,bd=5,text = " Jouer ",bg='blue',command = main_game)
