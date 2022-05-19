@@ -10,7 +10,7 @@ end['bg']='white'
 end.geometry("1500x1000")
 
 
-img = PhotoImage(file="menu.bg2.cropped.gif")
+img = PhotoImage(file=r'menubg.jpg')
 label = Label(image=img)
 label.place(x=0, y=0)
 

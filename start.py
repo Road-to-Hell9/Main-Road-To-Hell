@@ -5,7 +5,7 @@ def open_main():
     import Main
 
 start = Tk()
-start.title("fdfdfdfrgtgfedwsqaayxxcvfvbghbtnzhzfdMain road to hell")
+start.title("Main road to hell")
 start['bg']='grey'
 
 label_fenetre = Label(start,text="Menu",fg='white', bg="black",font="Arial 15 italic")
