@@ -1,4 +1,5 @@
 #Imports
+from ast import Global
 from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk, Image
@@ -55,28 +56,34 @@ root.bind("<q>",movement_up)
 root.bind("<d>",movement_down)
 root.bind("<s>",movement_mid)
 
+def main_game():
+    global xNPC_1, yCsize, root
 #Game start
-while Game == True:
-    
-# Execute tkinter
-    root.mainloop()
-#Pos
-    xNPC_1 = xNPC_1 - 0.001
-    print(xNPC_1)
-    npc_1.place(relx = xNPC_1, rely = yCsize)
+    if Game == True:
 #Hitboxes
         #Check player x and y
-    carXmin = player.winfo_rootx()
-    carYmin = player.winfo_rooty()
-    carXmax = player.winfo_rootx() + xCsize
-    carYmax = player.winfo_rooty() + yCsize
+        carXmin = player.winfo_rootx()
+        carYmin = player.winfo_rooty()
+        carXmax = player.winfo_rootx() + xCsize
+        carYmax = player.winfo_rooty() + yCsize
         #Check Red Car x and y
-    npcXmin = npc_1.winfo_rootx()
-    npcYmin = npc_1.winfo_rooty()
-    npcXmax = npc_1.winfo_rootx() + xCsize
-    npcYmax = npc_1.winfo_rooty() + yCsize
+        npcXmin = npc_1.winfo_rootx()
+        npcYmin = npc_1.winfo_rooty()
+        npcXmax = npc_1.winfo_rootx() + xCsize
+        npcYmax = npc_1.winfo_rooty() + yCsize
         #Check colision
-    #if carXmax >= npcXmin and carXmin <= npcXmax and carYmax >= npcYmin and carYmin <= npcYmax:
-    #     Game = False
-    #     print("Game Over")
+        if carXmax >= npcXmin and carXmin <= npcXmax and carYmax >= npcYmin and carYmin <= npcYmax:
+             Game = False
+             print("Game Over")
+        
+        #Pos
+        xNPC_1 = xNPC_1 - 1
+        print(xNPC_1)
+        npc_1.place(x = xNPC_1, y = yCsize)
+        
+        root.after(50, main_game)
     
+    # Execute tkinter
+bouton_animer = Button(root,bd=5,text = " Jouer ",bg='blue',command = main_game)
+bouton_animer.pack(side=TOP,padx=10,pady=10)
+root.mainloop()
