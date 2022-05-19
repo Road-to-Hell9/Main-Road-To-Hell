@@ -48,11 +48,11 @@ Canevas = Canvas(fenetre,width=LARG,height=HAUT,bg ='cyan')
 proj = Canevas.create_oval(X,Y,X+TAILLE,Y+TAILLE,fill='red')
 
 Canevas.pack(padx=10,pady=10,side=LEFT)
-bouton_animer = Button(fenetre,bd=5,text = " Jouer ",bg='blue',command = Move)
+
 bouton_pause = Button(fenetre,text = " Pause ",bg='green',command = Pause)
 bouton_quitter = Button(fenetre,text = " Quitter ",bg='red' ,command = fenetre.destroy)
 
-bouton_animer.pack(side=TOP,padx=10,pady=10)
+
 bouton_pause.pack(side=TOP,padx=50,pady=50)
 bouton_quitter.pack(side=BOTTOM,padx=10,pady=10)
 fenetre.mainloop()
