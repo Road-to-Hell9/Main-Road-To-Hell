@@ -3,7 +3,7 @@ from ast import Global
 from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk, Image
-
+import random
 # Create object
 root = Tk()
 
@@ -16,9 +16,11 @@ score = 0
 
 xCsize = 200
 yCsize = yWmax/2 - 117/2
+yNsize = yCsize
 xNPC_1 = 1200
 xNPC_2 = 1200
 xNPC_3 = 1200
+random_pos = [yWmax - 160, 45, yCsize]
 
 #Imports
 bg = PhotoImage(file = "pixel-street.png")
@@ -70,7 +72,7 @@ def main_game_start():
         return("Already executed")
 
 def main_game():
-    global xNPC_1, xNPC_2, xCsize, root, Game
+    global xNPC_1, xNPC_2, xCsize, root, Game, yNsize
 #Game start
     if Game == True:
 #Hitboxes
@@ -92,7 +94,7 @@ def main_game():
 
         #Pos
         xNPC_1 = xNPC_1 - 6
-        npc_1.place(x = xNPC_1, y = yCsize)
+        npc_1.place(x = xNPC_1, y = yNsize)
 
         xNPC_2 = xNPC_2 - 6
         npc_2.place(x = xNPC_2, y = 45)
@@ -103,9 +105,12 @@ def main_game():
         root.destroy()
         import Game_over
         print("Game Over")
-
     if Game == True:
         root.after(50, main_game)
+    if npc1Xmax < -5:
+        yNsize = random.choice(random_pos)
+        print(yNsize)
+        npc_1.place(x = xNPC_1, y = yNsize)
     elif Game == False:
         print("")
 
