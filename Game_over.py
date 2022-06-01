@@ -1,7 +1,9 @@
 from tkinter import *
 from PIL import ImageTk, Image
 
-
+yourscore = 666999
+highscore = 1200000000000000000
+champion = "ja "
 def close_main():
     end.destroy()
     import Main
@@ -28,6 +30,20 @@ bouton_quit=Button(end, text="Quit",height = 5, width = 15,bg='red',fg='white', 
 bouton_quit.pack(padx=1,pady=5)
 
 
+yourscore_show = Label(end,text="your score is:"+str(yourscore),fg='black',font=("Times New Roman bold",50))
+yourscore_show.pack()
 
+highscore_show = Label(end,text="Current champion is "+str(champion)+ " with "+str(highscore)+ " points",fg='black',font=("Times New Roman bold",25))
+highscore_show.pack()
+
+
+##def show_score(x,y):
+##    label_score = Label(text="Score:" + int(score), )
+##    screen.blit(score, x,y)
+
+##with open("scireboard.txt" , "w" , encoding = "utf-8") as fichier :
+##    fichier.write(score)
+
+##show_score(textX, textY)
 end.mainloop()
 
