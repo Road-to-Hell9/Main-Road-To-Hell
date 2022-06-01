@@ -93,13 +93,8 @@ def main_game():
         #Pos
         xNPC_1 = xNPC_1 - 6
         npc_1.place(x = xNPC_1, y = yCsize)
-<<<<<<< Updated upstream
 
-        xNPC_2 = xNPC_2 - 3
-=======
-        
         xNPC_2 = xNPC_2 - 6
->>>>>>> Stashed changes
         npc_2.place(x = xNPC_2, y = 45)
 
         #Check colision
