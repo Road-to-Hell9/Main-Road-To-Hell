@@ -1,6 +1,6 @@
 # Main-Road-To-Hell
 ## Description
-<sub>Game called "Main-Road-To-Hell". A mix of a highway race game and Space invaders.</sub>
+<sup>Game called "Main-Road-To-Hell". A highway race game.</sup>
 
 ## Developers
 **Rosita Schrenk**
@@ -9,5 +9,13 @@
 - [Created End Game Screen](Game_over.py)
 
 **Vladislav Vasiliev**
+- [Main Game](Main.py)
+- Timer
+- NPC movement and reset
+- 
 
-**Christian Glaeser***
+**Christian Glaeser**
+- [Main Game](Main.py)
+- Hitboxes
+- Car collisions
+-
