@@ -10,7 +10,7 @@ root = Tk()
 #Variables
 xWmax = 870
 yWmax = 570
-Game = True
+Game = False
 time_1 = 0
 score = 0
 
@@ -46,9 +46,6 @@ npc_1.place(x = xNPC_1, y = yCsize)
 npc_2 = Label(root, image = npc_img, borderwidth=0)
 npc_2.place(x = xNPC_2, y = 45)
 
-npc_3 = Label(root, image = npc_img, borderwidth=0)
-npc_3.place(x = xNPC_3, y = yWmax - 160)
-
 #Keys
 def movement_down(event):
     player.place(x = 2, y = yWmax - 160)
@@ -64,8 +61,16 @@ root.bind("<q>",movement_up)
 root.bind("<d>",movement_down)
 root.bind("<s>",movement_mid)
 
+def main_game_start():
+    global Game
+    if Game == False:
+        Game = True
+        main_game()
+    else:
+        return("Already executed")
+
 def main_game():
-    global xNPC_1, xNPC_2, xNPC_3, xCsize, root, Game
+    global xNPC_1, xNPC_2, xCsize, root, Game
 #Game start
     if Game == True:
 #Hitboxes
@@ -85,11 +90,6 @@ def main_game():
         npc2Xmax = npc_2.winfo_rootx() + xCsize
         npc2Ymax = npc_2.winfo_rooty() + 117
         
-        npc3Xmin = npc_3.winfo_rootx()
-        npc3Ymin = npc_3.winfo_rooty()
-        npc3Xmax = npc_3.winfo_rootx() + xCsize
-        npc3Ymax = npc_3.winfo_rooty() + 117
-        
         #Pos
         xNPC_1 = xNPC_1 - 3
         npc_1.place(x = xNPC_1, y = yCsize)
@@ -98,7 +98,7 @@ def main_game():
         npc_2.place(x = xNPC_2, y = 45)
 
         #Check colision
-    if carXmax >= npc1Xmin and carXmin <= npc1Xmax and carYmax >= npc1Ymin and carYmin <= npc1Ymax or carXmax >= npc2Xmin and carXmin <= npc2Xmax and carYmax >= npc2Ymin and carYmin <= npc2Ymax or carXmax >= npc3Xmin and carXmin <= npc3Xmax and carYmax >= npc3Ymin and carYmin <= npc3Ymax:
+    if carXmax >= npc1Xmin and carXmin <= npc1Xmax and carYmax >= npc1Ymin and carYmin <= npc1Ymax or carXmax >= npc2Xmin and carXmin <= npc2Xmax and carYmax >= npc2Ymin and carYmin <= npc2Ymax:
         Game = False
         print("Game Over")
         
@@ -108,6 +108,6 @@ def main_game():
         print("")
     
     # Execute tkinter
-bouton_animer = Button(root,bd=5,text = " Jouer ",bg='blue',command = main_game)
+bouton_animer = Button(root,bd=5,text = " Jouer ",bg='blue',command = main_game_start)
 bouton_animer.pack(side=TOP,padx=10,pady=10)
 root.mainloop()
