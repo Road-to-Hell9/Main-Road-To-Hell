@@ -84,29 +84,31 @@ def main_game():
         npc1Ymin = npc_1.winfo_rooty()
         npc1Xmax = npc_1.winfo_rootx() + xCsize
         npc1Ymax = npc_1.winfo_rooty() + 117
-        
+
         npc2Xmin = npc_2.winfo_rootx()
         npc2Ymin = npc_2.winfo_rooty()
         npc2Xmax = npc_2.winfo_rootx() + xCsize
         npc2Ymax = npc_2.winfo_rooty() + 117
-        
+
         #Pos
         xNPC_1 = xNPC_1 - 3
         npc_1.place(x = xNPC_1, y = yCsize)
-        
+
         xNPC_2 = xNPC_2 - 3
         npc_2.place(x = xNPC_2, y = 45)
 
         #Check colision
     if carXmax >= npc1Xmin and carXmin <= npc1Xmax and carYmax >= npc1Ymin and carYmin <= npc1Ymax or carXmax >= npc2Xmin and carXmin <= npc2Xmax and carYmax >= npc2Ymin and carYmin <= npc2Ymax:
         Game = False
+        root.destroy()
+        import Game_over
         print("Game Over")
-        
+
     if Game == True:
         root.after(50, main_game)
     elif Game == False:
         print("")
-    
+
     # Execute tkinter
 bouton_animer = Button(root,bd=5,text = " Jouer ",bg='blue',command = main_game_start)
 bouton_animer.pack(side=TOP,padx=10,pady=10)
