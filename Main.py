@@ -89,6 +89,7 @@ def main_game():
         npc3Ymin = npc_3.winfo_rooty()
         npc3Xmax = npc_3.winfo_rootx() + xCsize
         npc3Ymax = npc_3.winfo_rooty() + 117
+        
         #Pos
         xNPC_1 = xNPC_1 - 3
         npc_1.place(x = xNPC_1, y = yCsize)
