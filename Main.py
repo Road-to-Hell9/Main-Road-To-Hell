@@ -17,8 +17,11 @@ score = 0
 xCsize = 200
 yCsize = yWmax/2 - 117/2
 yNsize = yCsize
+yNsize2 = yCsize
 xNPC_1 = 1200
-xNPC_2 = 1200
+xNPC_ini = xNPC_1
+xNPC_2 = 900
+xNPC_ini2 = xNPC_2
 xNPC_3 = 1200
 random_pos = [yWmax - 160, 45, yCsize]
 
@@ -72,7 +75,7 @@ def main_game_start():
         return("Already executed")
 
 def main_game():
-    global xNPC_1, xNPC_2, xCsize, root, Game, yNsize
+    global xNPC_1, xNPC_2, xCsize, root, Game, yNsize,RandomTeleport
 #Game start
     if Game == True:
 #Hitboxes
@@ -105,12 +108,18 @@ def main_game():
         root.destroy()
         import Game_over
         print("Game Over")
+    if npc1Xmax < -5:
+      yNsize = random.choice(random_pos)
+      xNPC_1 = xNPC_ini
+      print("car 1 pos", yNsize)
+      npc_1.place(x = xNPC_1, y = yNsize)
+    if npc2Xmax < -5:
+      yNsize2 = random.choice(random_pos)
+      xNPC_2 = xNPC_ini2
+      print("car 2 pos", yNsize2)
+      npc_2.place(x = xNPC_2, y = yNsize2)
     if Game == True:
         root.after(50, main_game)
-    if npc1Xmax < -5:
-        yNsize = random.choice(random_pos)
-        print(yNsize)
-        npc_1.place(x = xNPC_1, y = yNsize)
     elif Game == False:
         print("")
 
