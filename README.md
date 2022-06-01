@@ -1,6 +1,6 @@
 # Main-Road-To-Hell
 ## Description
-<sup>Game called "Main-Road-To-Hell". A highway race game.</sup>
+Game called "Main-Road-To-Hell". A highway race game.
 
 ## Developers
 **Rosita Schrenk**
