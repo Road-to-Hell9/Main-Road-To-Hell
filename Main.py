@@ -1,5 +1,6 @@
 #Imports
 from ast import Global
+from time import time
 from tkinter import *
 from tkinter import ttk
 from PIL import ImageTk, Image
@@ -13,6 +14,7 @@ yWmax = 570
 Game = False
 time_1 = 0
 score = 0
+speed = 6
 
 xCsize = 200
 yCsize = yWmax/2 - 117/2
@@ -31,12 +33,6 @@ player_img = ImageTk.PhotoImage(file = "main-car.png")
 npc_img = ImageTk.PhotoImage(file = "red-car.png")
 
 #----------Code----------#
-#timer
-def Time():
-    if Game == True:
-        time_1 = time_1 + 1
-        root.after(1000, Time)
-
 root.geometry("870x570")
 
 label1 = Label(root, image = bg)
@@ -66,16 +62,37 @@ root.bind("<q>",movement_up)
 root.bind("<d>",movement_down)
 root.bind("<s>",movement_mid)
 
-def main_game_start():
-    global Game
+#Game start check true
+def Main_game_start():
+    global Game, time_1
     if Game == False:
         Game = True
-        main_game()
+        Main_game()
+        Time()
+        Score()
     else:
         return("Already executed")
 
-def main_game():
-    global xNPC_1, xNPC_2, xCsize, root, Game, yNsize,RandomTeleport
+#timer
+def Time():
+    global time_1
+    time_1 = time_1 + 1
+    root.after(1000, Time)
+    print(time_1)
+
+#Score
+def Score():
+    global time_1, score, speed
+    score = time_1*10
+    root.after(2000, Score)
+    print("your high score is", score)
+    
+    if time_1 >= 20:
+        speed = (speed*time_1)/4
+
+#Main Game
+def Main_game():
+    global xNPC_1, xNPC_2, xCsize, root, Game, yNsize, speed
 #Game start
     if Game == True:
 #Hitboxes
@@ -96,10 +113,10 @@ def main_game():
         npc2Ymax = npc_2.winfo_rooty() + 117
 
         #Pos
-        xNPC_1 = xNPC_1 - 6
+        xNPC_1 = xNPC_1 - speed
         npc_1.place(x = xNPC_1, y = yNsize)
 
-        xNPC_2 = xNPC_2 - 6
+        xNPC_2 = xNPC_2 - speed
         npc_2.place(x = xNPC_2, y = 45)
 
         #Check colision
@@ -119,11 +136,11 @@ def main_game():
       print("car 2 pos", yNsize2)
       npc_2.place(x = xNPC_2, y = yNsize2)
     if Game == True:
-        root.after(50, main_game)
+        root.after(50, Main_game)
     elif Game == False:
         print("")
 
     # Execute tkinter
-bouton_animer = Button(root,bd=5,text = " Jouer ",bg='blue',command = main_game_start)
+bouton_animer = Button(root,bd=5,text = " Jouer ",bg='blue',command = Main_game_start)
 bouton_animer.pack(side=TOP,padx=10,pady=10)
 root.mainloop()
