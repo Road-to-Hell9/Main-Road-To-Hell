@@ -11,9 +11,12 @@ def close_main():
     end.destroy()
     import Main
 
-highscore= open("Txt/Highscore.txt" , "r" , encoding = "utf-8")
+hs= open("Txt/Highscore.txt" , "r" , encoding = "utf-8")
+highscore= int(hs.read())
 
-##        fichier.write(username.get())
+us= open("Txt/scoreboard_name.txt" , "r" , encoding = "utf-8")
+username= us.read()
+
 
 end = Tk()
 end.title("Main road to hell")
