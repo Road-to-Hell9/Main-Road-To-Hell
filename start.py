@@ -9,7 +9,7 @@ def open_main():
     with open("scoreboard.txt" , "w" , encoding = "utf-8") as fichier :
         fichier.write(username.get())
     start.destroy()
-    from python import Main
+    import Main
 
 
 ##canvas
