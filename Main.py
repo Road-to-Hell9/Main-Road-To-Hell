@@ -50,13 +50,10 @@ npc_2.place(x = xNPC_2, y = 45)
 #Keys
 def movement_down(event):
     player.place(x = 2, y = yWmax - 160)
-    print("d")
 def movement_up(event):
     player.place(x = 2, y = 45)
-    print("q")
 def movement_mid(event):
     player.place(x = 2, y = yCsize)
-    print("s")
 
 root.bind("<q>",movement_up)
 root.bind("<d>",movement_down)
@@ -135,12 +132,10 @@ def Main_game():
     if npc1Xmax < -5:
       yNsize = random.choice(random_pos)
       xNPC_1 = xNPC_ini
-      print("car 1 pos", yNsize)
       npc_1.place(x = xNPC_1, y = yNsize)
     if npc2Xmax < -5:
       yNsize2 = random.choice(random_pos)
       xNPC_2 = xNPC_ini2
-      print("car 2 pos", yNsize2)
       npc_2.place(x = xNPC_2, y = yNsize2)
 
         #Rep function

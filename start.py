@@ -31,11 +31,4 @@ bouton_jouer.pack(padx=10,pady=10)
 bouton_quit=Button(start, text="Quit",height = 5, width = 15,bg='red',fg='white', command=start.destroy)
 bouton_quit.pack(padx=1,pady=5)
 
-##bouton_valider = Button(start,text = " sign me up ",bg='white',fg='black', command = valider)
-##with open("scoreboard.txt" , "r" , encoding = "utf-8") as fichier :
-##    for ligne in fichier :
-##        a=ligne
-##bouton_valider.pack(padx=0,pady=0)
-
 start.mainloop()
-
