@@ -28,9 +28,9 @@ xNPC_3 = 1200
 random_pos = [yWmax - 160, 45, yCsize]
 
 #Imports
-bg = PhotoImage(file = "../Images/pixel-street.png")
-player_img = ImageTk.PhotoImage(file = "../Images/main-car.png")
-npc_img = ImageTk.PhotoImage(file = "../Images/red-car.png")
+bg = PhotoImage(file = "Images/pixel-street.png")
+player_img = ImageTk.PhotoImage(file = "Images/main-car.png")
+npc_img = ImageTk.PhotoImage(file = "Images/red-car.png")
 
 #----------Code----------#
 root.geometry("870x570")
@@ -128,7 +128,7 @@ def Main_game():
         print("Game Over")
         #save score
         print(score)
-        file = open("../Txt/score.txt" , "w" , encoding = "utf-8")
+        file = open("Txt/score.txt" , "w" , encoding = "utf-8")
         file.write(str(score))
     
         #Check if NPC out of window
