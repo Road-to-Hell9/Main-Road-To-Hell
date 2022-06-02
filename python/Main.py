@@ -150,8 +150,15 @@ def Main_game():
         print("")
 
 # Execute tkinter
+<<<<<<< HEAD
 label_score = Label(root,text="0000",fg='black',font=("Times New Roman bold",30))
 label_score.pack(side=TOP,anchor =NE)
 bouton_animer = Button(root,bd=50,text = " Jouer ",bg='blue',command = Main_game_start)
 bouton_animer.pack()
+=======
+label_score = Label(root,text="0000",fg='black',font=("Times New Roman bold",70))
+label_score.pack(side=TOP,padx=40,pady=10)
+bouton_animer = Button(root,bd=5,text = " Jouer ",bg='blue',command = Main_game_start)
+bouton_animer.pack(side=TOP,padx=10,pady=10)
+>>>>>>> 8b76344568355b8d2743067d1cb43bc579f3e4b3
 root.mainloop()
