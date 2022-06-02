@@ -18,8 +18,6 @@ img = PhotoImage(file='Images/menubg.png')
 label = Label(image=img)
 label.place(x=0, y=0)
 
-
-
 def temp_text(e):
     nom.delete(0,"end")
 
@@ -30,10 +28,8 @@ username = StringVar()
 nom = Entry(start, textvariable = username , font=('Arial 24'))
 nom.pack(padx=5,pady=5)
 
-
 nom.insert(0, "Your name here......")
 nom.bind("<FocusIn>", temp_text)
-
 
 label_q = Label(start,text="Commands: Up=Q",fg='black',font=("Times New Roman bold",30))
 label_q.pack()
@@ -41,8 +37,6 @@ label_s = Label(start,text="Middle=S",fg='black',font=("Times New Roman bold",30
 label_s.pack()
 label_d = Label(start,text="Down=D",fg='black',font=("Times New Roman bold",30))
 label_d.pack()
-
-
 
 bouton_jouer = Button(start,text = " wanna play? ",height = 5, width = 15,bg='green',fg='black', command = open_main)
 bouton_jouer.pack(padx=10,pady=10)
