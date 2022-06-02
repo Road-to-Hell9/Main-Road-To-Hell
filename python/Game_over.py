@@ -3,7 +3,7 @@ from PIL import ImageTk, Image
 
 yourscore = 666999
 highscore = 1200000000000000000
-champion = "ja "
+champion = "Test_name"
 def close_main():
     end.destroy()
     import Main
@@ -16,7 +16,7 @@ end.geometry("1500x1000")
 
 
 
-img = PhotoImage(file='menubg.png')
+img = PhotoImage(file='../Images/menubg.png')
 label = Label(image=img)
 label.place(x=0, y=0)
 

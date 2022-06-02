@@ -9,14 +9,12 @@ def open_main():
     start.destroy()
     from python import Main
 
-
-
 ##canvas
 start = Tk()
 start.title("Main road to hell")
 start['bg']='white'
 start.geometry("1500x1000")
-img = PhotoImage(file='menubg.png')
+img = PhotoImage(file='Images/menubg.png')
 label = Label(image=img)
 label.place(x=0, y=0)
 
