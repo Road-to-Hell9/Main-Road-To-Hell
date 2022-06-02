@@ -119,14 +119,18 @@ def Main_game():
 
         #Check colision and stop game
     if carXmax >= npc1Xmin and carXmin <= npc1Xmax and carYmax >= npc1Ymin and carYmin <= npc1Ymax or carXmax >= npc2Xmin and carXmin <= npc2Xmax and carYmax >= npc2Ymin and carYmin <= npc2Ymax:
-        Game = False
-        root.destroy()
-        import Game_over
-        print("Game Over")
+     
         #save score
         print(score)
-        file = open("Txt/score.txt" , "w" , encoding = "utf-8")
+        file = open("Txt/score.txt", "w")
         file.write(str(score))
+        file.close()
+        
+            #Stop game
+        Game = False
+        root.destroy()
+        print("Game Over")
+        import Game_over
     
         #Check if NPC out of window
     if npc1Xmax < -5:

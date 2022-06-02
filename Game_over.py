@@ -1,19 +1,15 @@
 from tkinter import *
 from PIL import ImageTk, Image
 
-##Vars
-score = 0
-highscore = 0
-
 ##Read Files
-hs= open("Txt/highscore.txt" , "r" , encoding = "utf-8")
-highscore= int(hs.read())
+hs = open("Txt/highscore.txt", "r")
+highscore = int(hs.read())
 
-us= open("Txt/scoreboard_name.txt" , "r" , encoding = "utf-8")
-username= us.read()
+us = open("Txt/scoreboard_name.txt", "r")
+username = us.read()
 
-sc= open("Txt/score.txt" , "r" , encoding = "utf-8")
-score= int(sc.read())
+sc = open("Txt/score.txt", "r")
+score = int(sc.read())
 
 #Window
 end = Tk()
@@ -46,7 +42,7 @@ if score < highscore:
 elif score >= highscore:
     highscore = score
 
-    yourscore_show = Label(end,text= str(username)+ "is the new chapion.\n His score is:"+str(score),fg='black',font=("Times New Roman bold",50))
+    yourscore_show = Label(end,text= str(username)+ " is the new chapion.\n His score is:"+str(score),fg='black',font=("Times New Roman bold",50))
     yourscore_show.pack()
 
     ##Update highscore file
