@@ -7,7 +7,7 @@ def open_main():
     with open("scoreboard.txt" , "w" , encoding = "utf-8") as fichier :
         fichier.write(username.get())
     start.destroy()
-    import Main
+    from python import Main
 
 
 
