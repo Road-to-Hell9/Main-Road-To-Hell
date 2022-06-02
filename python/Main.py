@@ -149,7 +149,7 @@ def Main_game():
         print("")
 
 # Execute tkinter
-label_score = Label(root,text="0000",fg='black',font=("Times New Roman bold",70)
+label_score = Label(root,text="0000",fg='black',font=("Times New Roman bold",70))
 label_score.pack(side=TOP,padx=40,pady=10)
 bouton_animer = Button(root,bd=5,text = " Jouer ",bg='blue',command = Main_game_start)
 bouton_animer.pack(side=TOP,padx=10,pady=10)
