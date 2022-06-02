@@ -4,12 +4,15 @@ from PIL import ImageTk, Image
 ##Read Files
 hs = open("Txt/highscore.txt", "r")
 highscore = int(hs.read())
+hs.close()
 
 us = open("Txt/scoreboard_name.txt", "r")
 username = us.read()
+us.close()
 
 sc = open("Txt/score.txt", "r")
 score = int(sc.read())
+sc.close()
 
 #Window
 end = Tk()

@@ -126,7 +126,7 @@ def Main_game():
         file.write(str(score))
         file.close()
         
-            #Stop game
+        #Stop game
         Game = False
         root.destroy()
         print("Game Over")
