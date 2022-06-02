@@ -85,8 +85,9 @@ def Score():
     global time_1, score, speed
     score = time_1*10
     root.after(2000, Score)
-    print("your high score is", score)
-    
+    label_score.config(text = score)
+    print("your score is", score)
+
     if time_1 >= 20:
         speed = speed+(time_1/10)
 
@@ -147,7 +148,9 @@ def Main_game():
     elif Game == False:
         print("")
 
-    # Execute tkinter
+# Execute tkinter
+label_score = Label(root,text="0000",fg='black',font=("Times New Roman bold",70)
+label_score.pack(side=TOP,padx=40,pady=10)
 bouton_animer = Button(root,bd=5,text = " Jouer ",bg='blue',command = Main_game_start)
 bouton_animer.pack(side=TOP,padx=10,pady=10)
 root.mainloop()
