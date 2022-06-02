@@ -87,10 +87,9 @@ def Score():
     score = time_1*10
     root.after(2000, Score)
     label_score.config(text = score)
-    print("your score is", score)
 
-    if time_1 >= 20:
-        speed = speed+(time_1/10)
+    if time_1 >= 20 and speed < 36:
+        speed = speed+(time_1/20)
 
 #Main Game
 def Main_game():
@@ -128,8 +127,9 @@ def Main_game():
         import Game_over
         print("Game Over")
         #save score
-        file = open("../Txt/scoreboard.txt" , "w" , encoding = "utf-8")
-        file.write("\n", score)
+        print(score)
+        file = open("../Txt/score.txt" , "w" , encoding = "utf-8")
+        file.write(str(score))
     
         #Check if NPC out of window
     if npc1Xmax < -5:
@@ -150,8 +150,8 @@ def Main_game():
         print("")
 
 # Execute tkinter
-label_score = Label(root,text="0000",fg='black',font=("Times New Roman bold",70))
-label_score.pack(side=TOP,padx=40,pady=10)
+label_score = Label(root,text="0000",fg='black',font=("Times New Roman bold",30))
+label_score.pack(side=TOP,anchor=NE)
 bouton_animer = Button(root,bd=5,text = " Jouer ",bg='blue',command = Main_game_start)
 bouton_animer.pack(side=TOP,padx=10,pady=10)
 root.mainloop()

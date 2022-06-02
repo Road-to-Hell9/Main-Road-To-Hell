@@ -6,7 +6,7 @@ from PIL import ImageTk, Image
 
 def open_main():
 
-    with open("Txt/scoreboard.txt" , "w" , encoding = "utf-8") as fichier :
+    with open("Txt/scoreboard_name.txt" , "w" , encoding = "utf-8") as fichier :
         fichier.write(username.get())
     start.destroy()
     from python import Main
