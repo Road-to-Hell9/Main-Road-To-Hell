@@ -88,11 +88,11 @@ def Score():
     print("your high score is", score)
     
     if time_1 >= 20:
-        speed = (speed*time_1)/4
+        speed = speed+(time_1/10)
 
 #Main Game
 def Main_game():
-    global xNPC_1, xNPC_2, xCsize, root, Game, yNsize, speed
+    global xNPC_1, xNPC_2, xCsize, root, Game, yNsize, speed, score
 #Game start
     if Game == True:
 #Hitboxes
@@ -119,12 +119,17 @@ def Main_game():
         xNPC_2 = xNPC_2 - speed
         npc_2.place(x = xNPC_2, y = 45)
 
-        #Check colision
+        #Check colision and stop game
     if carXmax >= npc1Xmin and carXmin <= npc1Xmax and carYmax >= npc1Ymin and carYmin <= npc1Ymax or carXmax >= npc2Xmin and carXmin <= npc2Xmax and carYmax >= npc2Ymin and carYmin <= npc2Ymax:
         Game = False
         root.destroy()
         import Game_over
         print("Game Over")
+        #save score
+        with open("../Txt/scoreboard.txt" , "w" , encoding = "utf-8") as fichier :
+            fichier.write(score.get())
+    
+        #Check if NPC out of window
     if npc1Xmax < -5:
       yNsize = random.choice(random_pos)
       xNPC_1 = xNPC_ini
@@ -135,6 +140,8 @@ def Main_game():
       xNPC_2 = xNPC_ini2
       print("car 2 pos", yNsize2)
       npc_2.place(x = xNPC_2, y = yNsize2)
+      
+        #Rep function
     if Game == True:
         root.after(50, Main_game)
     elif Game == False:
