@@ -1,13 +1,13 @@
 from tkinter import *
 from PIL import ImageTk, Image
 
+##Start main game
 def open_main():
 
     with open("Txt/scoreboard_name.txt" , "w" , encoding = "utf-8") as fichier :
         fichier.write(username.get())
     start.destroy()
     import Main
-
 
 ##canvas
 start = Tk()
@@ -23,12 +23,8 @@ username = StringVar()
 nom = Entry(start, text="Your name", textvariable = username , width =10)
 nom.pack(padx=5,pady=5)
 
-
-
 label_fenetre = Label(start,text="Welcome",fg='black',font=("Times New Roman bold",70))
 label_fenetre.pack()
-
-
 
 bouton_jouer = Button(start,text = " wanna play? ",height = 5, width = 15,bg='green',fg='black', command = open_main)
 bouton_jouer.pack(padx=10,pady=10)
