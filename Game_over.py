@@ -53,4 +53,3 @@ elif score >= highscore:
     file.write(str(score))
 
 end.mainloop()
-
