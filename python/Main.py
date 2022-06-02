@@ -65,6 +65,7 @@ root.bind("<s>",movement_mid)
 #Game start check true
 def Main_game_start():
     global Game, time_1
+    bouton_animer.pack_forget()
     if Game == False:
         Game = True
         Main_game()
@@ -129,7 +130,7 @@ def Main_game():
         #save score
         with open("../Txt/scoreboard.txt" , "w" , encoding = "utf-8") as fichier :
             fichier.write(score.get())
-    
+
         #Check if NPC out of window
     if npc1Xmax < -5:
       yNsize = random.choice(random_pos)
@@ -141,7 +142,7 @@ def Main_game():
       xNPC_2 = xNPC_ini2
       print("car 2 pos", yNsize2)
       npc_2.place(x = xNPC_2, y = yNsize2)
-      
+
         #Rep function
     if Game == True:
         root.after(50, Main_game)
@@ -149,8 +150,8 @@ def Main_game():
         print("")
 
 # Execute tkinter
-label_score = Label(root,text="0000",fg='black',font=("Times New Roman bold",70)
-label_score.pack(side=TOP,padx=40,pady=10)
-bouton_animer = Button(root,bd=5,text = " Jouer ",bg='blue',command = Main_game_start)
-bouton_animer.pack(side=TOP,padx=10,pady=10)
+label_score = Label(root,text="0000",fg='black',font=("Times New Roman bold",30))
+label_score.pack(side=TOP,anchor =NE)
+bouton_animer = Button(root,bd=50,text = " Jouer ",bg='blue',command = Main_game_start)
+bouton_animer.pack()
 root.mainloop()
