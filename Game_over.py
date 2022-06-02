@@ -1,13 +1,19 @@
 from tkinter import *
 from PIL import ImageTk, Image
 
+
 yourscore = 666999
 highscore = 1200000000000000000
 champion = "Test_name"
+
+
 def close_main():
     end.destroy()
     import Main
 
+highscore= open("Txt/Highscore.txt" , "r" , encoding = "utf-8")
+
+##        fichier.write(username.get())
 
 end = Tk()
 end.title("Main road to hell")
@@ -30,10 +36,10 @@ bouton_quit=Button(end, text="Quit",height = 5, width = 15,bg='red',fg='white', 
 bouton_quit.pack(padx=1,pady=5)
 
 
-yourscore_show = Label(end,text="your score is:"+str(yourscore),fg='black',font=("Times New Roman bold",50))
+yourscore_show = Label(end,text= str(username)+ "´s score is:"+str(yourscore),fg='black',font=("Times New Roman bold",50))
 yourscore_show.pack()
 
-highscore_show = Label(end,text="Current champion is "+str(champion)+ " with "+str(highscore)+ " points",fg='black',font=("Times New Roman bold",25))
+highscore_show = Label(end,text="Current champion has "+str(highscore)+ " points",fg='black',font=("Times New Roman bold",25))
 highscore_show.pack()
 
 
