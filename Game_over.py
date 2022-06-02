@@ -5,11 +5,6 @@ from PIL import ImageTk, Image
 score = 0
 highscore = 0
 
-##Close Main.py
-def close_main():
-    end.destroy()
-    import Main
-
 ##Read Files
 hs= open("Txt/highscore.txt" , "r" , encoding = "utf-8")
 highscore= int(hs.read())
@@ -17,7 +12,7 @@ highscore= int(hs.read())
 us= open("Txt/scoreboard_name.txt" , "r" , encoding = "utf-8")
 username= us.read()
 
-sc= open("Txt/scoreboard_name.txt" , "r" , encoding = "utf-8")
+sc= open("Txt/score.txt" , "r" , encoding = "utf-8")
 score= int(sc.read())
 
 #Window
@@ -36,8 +31,6 @@ label_fenetre = Label(end,text="GAME OVER",fg='red',font=("Times New Roman bold"
 label_fenetre.pack()
 
 ##Close game or Restart
-bouton_jouer = Button(end,text = " try again? ",height = 5, width = 15,bg='green',fg='black', command = close_main )
-bouton_jouer.pack(padx=10,pady=10)
 bouton_quit=Button(end, text="Quit",height = 5, width = 15,bg='red',fg='white', command=end.destroy)
 bouton_quit.pack(padx=1,pady=5)
 
