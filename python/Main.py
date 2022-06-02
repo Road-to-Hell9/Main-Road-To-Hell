@@ -127,8 +127,8 @@ def Main_game():
         import Game_over
         print("Game Over")
         #save score
-        with open("../Txt/scoreboard.txt" , "w" , encoding = "utf-8") as fichier :
-            fichier.write(score.get())
+        file = open("../Txt/scoreboard.txt" , "w" , encoding = "utf-8")
+        file.write("\n", score)
     
         #Check if NPC out of window
     if npc1Xmax < -5:
